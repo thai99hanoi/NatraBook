@@ -79,10 +79,10 @@
             <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img style="width: 100%;height: 300px; border: 1px solid #ddd" class="d-block w-100" src="Img/duongbanner.png" data-src="holder.js/900x400?theme=social" alt="First slide">
+                        <img style="width: 100%;height: 300px; border: 1px solid #ddd" class="d-block w-100" src="Img/demobanner.jpg" data-src="holder.js/900x400?theme=social" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img style="width: 100%;height: 300px; border: 1px solid #ddd" class="d-block w-100" src="Img/tilquotes.png" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
+                        <img style="width: 100%;height: 300px; border: 1px solid #ddd" class="d-block w-100" src="Img/demobanner1.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
                     </div>
                     <div class="carousel-item">
                         <img style="width: 100%;height: 300px; border: 1px solid #ddd" class="d-block w-100" src="Img/demobanner.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">

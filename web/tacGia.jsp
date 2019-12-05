@@ -76,9 +76,9 @@
 
                     </div>
                     <div class="col-md-6">
-                        <h3>
+                        <h1 style="color: red">
                             ${tg.tenTacGia}
-                        </h3>
+                        </h1>
                         <p>
                             ${tg.ghiChuTG}
                         </p>

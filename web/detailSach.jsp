@@ -63,20 +63,20 @@
                                     <a class="nav-link" href="KhachHang">Welcome ${sessionScope.login.username}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="logout">Logout</a>
+                                    <a class="nav-link" href="logout">Đăng Xuất</a>
                                 </li>
 
                             </c:if>
                             <li class="nav-item">
                                 <c:if test="${empty sessionScope.login}">
-                                    <a class="nav-link" href="login">Login</a>
+                                    <a class="nav-link" href="login">Đăng Nhập</a>
                                 </c:if>
                             </li>
                         </ul>
                         <ul class="navbar-nav ml-auto">
                             <form class="mr-auto form-inline" action="Sach">
                                 <input class="form-control mr-sm-2" type="text" placeholder="Tìm Kiếm"  name="search" value="${param.search}" >
-                                <button type="submit" value="search" name="submit">Tìm</button>
+                                <button class="btn" type="submit" value="search" name="submit">Tìm</button>
                             </form>
                         </ul>
                     </div>
@@ -98,14 +98,14 @@
                                 </b>
 
                             </h1>
-                            <h3>
+                            <h3 style="font-family: initial">
                                 Tác giả:
                                 <a href="TacGia?tenTacGia=${ts.tenTacGia}">
                                     ${ts.tenTacGia}
                                 </a>
 
                             </h3>
-                            <h3 style="">
+                            <h3 style="font-family: initial">
                                 Nhà xuất bản: 
                                 ${ts.tenNXB}
                             </h3>
@@ -113,45 +113,45 @@
                             <h2 style="text-decoration: underline;color: Red;padding: 5px">
                                 Thông Tin Chi Tiết: 
                             </h2>
-                            <h5>
+                            <h5 style="font-family: sans-serif">
                                 Tổng Số Trang:
                                 ${ts.tongSoTrang}
                             </h5>
-                            <h5>
+                            <h5 style="font-family: sans-serif">
                                 Mã Sách:
                                 ${ts.maSach}
 
                             </h5>
-                            <h5>
+                            <h5 style="font-family: sans-serif">
                                 Nhà Xuất Bản:
                                 ${ts.tenNXB}
 
                             </h5>
-                            <h5>
+                            <h5 style="font-family: sans-serif">
                                 Trọng Lượng:
                                 ${ts.trongLuong}
                                 gram
 
                             </h5>
-                            <h5>
+                            <h5 style="font-family: sans-serif">
                                 Mã Sản Phẩm:
                                 ${ts.maChiTiet}
 
 
                             </h5>
-                            <h5>
+                            <h5 style="font-family: sans-serif">
                                 Tác Giả:
                                 ${ts.tenTacGia}
 
 
                             </h5>
-                            <h5>
+                            <h5 style="font-family: sans-serif">
                                 Ngôn Ngữ:
                                 ${ts.ngonNgu}
 
                             </h5>
                         </div>
-                        <div class="col-md-4" style="padding: 5px ">
+                        <div class="col-md-4" style="padding: 5px; font-family: monospace ">
                             <h5 style="text-align: right">
                                 Chi Tiết Đơn Hàng:
 
@@ -196,23 +196,23 @@
                                 <div class="col-md-6">
 
 
-                                    <div class="row">
+                                    <div class="row" style="font-family: monospace">
 
                                         Giá Bìa:
                                         ${ts.giaBia}
                                     </div>
-                                    <div class="row">
+                                    <div class="row" style="font-family: monospace">
 
                                         Tổng Số Trang:
                                         ${ts.tongSoTrang}
                                     </div>
-                                    <div class="row">
+                                    <div class="row" style="font-family: monospace">
 
                                         Trọng Lượng:
                                         ${ts.trongLuong}
                                         gram
                                     </div>
-                                    <div class="row">
+                                    <div class="row" style="font-family: monospace">
 
                                         Năm Xuất Bản:
                                         ${ts.namXB}
@@ -221,16 +221,16 @@
                                 <div class="col-md-6">
 
 
-                                    <div class="row">
+                                    <div class="row" style="font-family: monospace">
                                         Mã Sản Phẩm:
                                         ${ts.maChiTiet}
                                     </div>
-                                    <div class="row">
+                                    <div class="row" style="font-family: monospace">
 
                                         Nhà Xuất Bản:
                                         ${ts.tenNXB}
                                     </div>
-                                    <div class="row">
+                                    <div class="row" style="font-family: monospace">
 
                                         Ngôn Ngữ:
                                         ${ts.ngonNgu}
