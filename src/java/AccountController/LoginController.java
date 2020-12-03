@@ -44,6 +44,7 @@ public class LoginController extends HttpServlet {
             List<Account> a = dao.login();
             if (username != null || password != null) {
              // dm thằng thái ngu
+             
 
                 if (username.equalsIgnoreCase("admin") && password.equals("admin")) {
                     Account x = new Account(username, password);
