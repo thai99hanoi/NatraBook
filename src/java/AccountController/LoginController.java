@@ -7,11 +7,8 @@ package AccountController;
 
 import dao.AccountDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,7 +43,7 @@ public class LoginController extends HttpServlet {
             session.setAttribute("error", "");
             List<Account> a = dao.login();
             if (username != null || password != null) {
-             
+             // dm thằng thái ngu
 
                 if (username.equalsIgnoreCase("admin") && password.equals("admin")) {
                     Account x = new Account(username, password);
