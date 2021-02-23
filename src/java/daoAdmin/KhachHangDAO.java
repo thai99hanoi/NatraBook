@@ -160,17 +160,21 @@ public class KhachHangDAO {
         return check > 0;
     }
      
-//    public static void main(String[] args) {
-//        KhachHangDAO dao = new KhachHangDAO();
-//        String ten = "Nguyễn Hữu Tài";
-//        String gioiTinh= "Nam";
-//        String email = "TAITNHE130138@gmail.com";
-//        String diachi= "61 Đặng Văn Ngữ";
-//        String sdt="1316448979";
-//        String taikhoan="auriat";
-//        KhachHang kh= new KhachHang(ten, gioiTinh, email, diachi, sdt,taikhoan);
-//        dao.update1(kh);
-//        
-//        
-//    }
+    public boolean Delete(int maKH) throws Exception {
+
+        String query = "DELETE From KHACHHANG where MaKhachHang=?\n";
+        int check = 0;
+        try (Connection conn = new DBContext().getConnection();
+                PreparedStatement ps = (conn != null) ? conn.prepareStatement(query) : null) {
+            if (ps != null) {
+                ps.setInt(1, maKH);
+                check = ps.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SachAdminDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return check > 0;
+    }
 }

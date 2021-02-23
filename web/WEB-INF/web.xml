@@ -8,11 +8,10 @@
         <filter-name>InforFilter</filter-name>
         <filter-class>AccountController.InforFilter</filter-class>
     </filter>
-        <filter>
+    <filter>
         <filter-name>InsertFilter</filter-name>
         <filter-class>AccountController.InsertFilter</filter-class>
     </filter>
-    
     <filter-mapping>
         <filter-name>AdminFilter</filter-name>
         <url-pattern>/sachAdmin</url-pattern>
@@ -205,6 +204,10 @@
         <servlet-name>DatHang2Controller</servlet-name>
         <servlet-class>controller.DatHang2Controller</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteKhachHangController</servlet-name>
+        <servlet-class>deleteController.DeleteKhachHangController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>detailSachController</servlet-name>
         <url-pattern>/detail</url-pattern>
@@ -384,6 +387,10 @@
     <servlet-mapping>
         <servlet-name>DatHang2Controller</servlet-name>
         <url-pattern>/dathang2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteKhachHangController</servlet-name>
+        <url-pattern>/deleteKH</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
