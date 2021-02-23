@@ -46,7 +46,7 @@ public class LoginController extends HttpServlet {
              // dm thằng thái ngu
              
 
-                if (username.equalsIgnoreCase("admin") && password.equals("admin")) {
+                if ("admin".equalsIgnoreCase(username) && "admin".equals(password)) {
                     Account x = new Account(username, password);
                     session.setAttribute("login", x);
                     request.getRequestDispatcher("/sachAdmin").forward(request, response);

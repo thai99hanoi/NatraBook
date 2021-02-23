@@ -46,7 +46,7 @@ public class RegistrationController extends HttpServlet {
               HttpSession session = request.getSession(true);
             List<KhachHang> kh1 = daoKH.select();
          AccountDAO dao = new AccountDAO();
-         int maKhachHang = new Random().nextInt(10000); ;
+         int maKhachHang = new Random().nextInt(10000); 
         String hoten = request.getParameter("hoten");
         String gioitinh = request.getParameter("gender");
         String email = request.getParameter("email");
