@@ -43,26 +43,27 @@ public class RegistrationController extends HttpServlet {
 
         try {
             KhachHangDAO daoKH = new KhachHangDAO();
-              HttpSession session = request.getSession(true);
+            HttpSession session = request.getSession(true);
             List<KhachHang> kh1 = daoKH.select();
          AccountDAO dao = new AccountDAO();
-         int maKhachHang = new Random().nextInt(10000); 
-        String hoten = request.getParameter("hoten");
-        String gioitinh = request.getParameter("gender");
-        String email = request.getParameter("email");
-        String diachi = request.getParameter("diachi");
-        String sdt = String.valueOf(request.getParameter("sdt"));
-        String taikhoan = request.getParameter("taikhoan");
-        String mk = request.getParameter("mk");
+            
+            int maKhachHang = daoKH.putMaKhachHang() + 1; 
+            String hoten = request.getParameter("hoten");
+            String gioitinh = request.getParameter("gender");
+            String email = request.getParameter("email");
+            String diachi = request.getParameter("diachi");
+            String sdt = String.valueOf(request.getParameter("sdt"));
+            String taikhoan = request.getParameter("taikhoan");
+            String mk = request.getParameter("mk");
 //        String avatar= request.getParameter("avatar");
             for (int i = 0; i < kh1.size(); i++) {
                 KhachHang get = kh1.get(i);
                 if(maKhachHang== get.getMaKhachHang()){
-                    session.setAttribute("error", "Trùng rồi");
+                    session.setAttribute("error", "Error!");
                     response.sendRedirect("registration");
                 }
                  if(taikhoan.equalsIgnoreCase(get.getTaiKhoan())){
-                      session.setAttribute("error", "Trùng rồi");
+                      session.setAttribute("error", "Error!");
                     response.sendRedirect("registration");
                 }
             }

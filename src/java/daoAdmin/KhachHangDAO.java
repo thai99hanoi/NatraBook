@@ -110,10 +110,10 @@ public class KhachHangDAO {
         ps.close();
         conn.close();
     }
-    
-     public List<KhachHang> selectByUser(String user) throws Exception {
+
+    public List<KhachHang> selectByUser(String user) throws Exception {
         List<KhachHang> khachhang = new ArrayList<>();
-        String sql = "select * from KHACHHANG where TaiKhoan = N'"+user+"'" ;
+        String sql = "select * from KHACHHANG where TaiKhoan = N'" + user + "'";
         Connection conn = new DBContext().getConnection();
         ResultSet rs = conn.prepareStatement(sql).executeQuery();
         while (rs.next()) {
@@ -132,10 +132,8 @@ public class KhachHangDAO {
         conn.close();
         return khachhang;
     }
-     
-     
-     
-     public boolean update1(KhachHang kh) {
+
+    public boolean update1(KhachHang kh) {
         int check = 0;
         String sql = "UPDATE dbo.KhachHang Set MaKhachHang= ?HoTen=?,GioiTinh=?,Email=?, DiaChi=?,SDT=? WHERE TaiKhoan =?";
 
@@ -148,9 +146,9 @@ public class KhachHangDAO {
             ps.setObject(5, kh.getDiaChi());
             ps.setObject(6, kh.getsDT());
             ps.setObject(7, kh.getTaiKhoan());
-           
+
             check = ps.executeUpdate();
-             System.out.println(kh.getTaiKhoan());
+            System.out.println(kh.getTaiKhoan());
             System.out.println(kh.getHoTen());
         } catch (SQLException e) {
             e.printStackTrace(System.out);
@@ -159,7 +157,7 @@ public class KhachHangDAO {
         }
         return check > 0;
     }
-     
+
     public boolean Delete(int maKH) throws Exception {
 
         String query = "DELETE From KHACHHANg where MaKhachHang=?";
@@ -177,4 +175,43 @@ public class KhachHangDAO {
         }
         return check > 0;
     }
+
+    public int putMaKhachHang() throws Exception {
+        KhachHang kh = new KhachHang();
+        DBContext db = new DBContext();
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int maKhachHang = 0;
+        try {
+            String sql = "Select MAX(MaKhachHang) from KHACHHANG";
+            conn = db.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                maKhachHang = rs.getInt(1);
+                break;
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if (rs != null && !rs.isClosed()) {
+                rs.close();
+            }
+            if (ps != null && !ps.isClosed()) {
+                ps.close();
+            }
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
+            }
+        }
+        return maKhachHang;
+    }
+    
+//    public static void main(String[] args) throws Exception {
+//        KhachHangDAO dao = new KhachHangDAO();
+//        int maKH = dao.putMaKhachHang();
+//        System.out.println(maKH);
+//    }
+
 }
