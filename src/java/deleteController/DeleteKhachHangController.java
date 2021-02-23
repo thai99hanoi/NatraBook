@@ -32,16 +32,14 @@ public class DeleteKhachHangController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            int maKH = Integer.valueOf(request.getParameter("maKhachHang"));
-            KhachHangDAO dao = new KhachHangDAO();
+        int maKH = Integer.valueOf(request.getParameter("maKhachHang"));
+        KhachHangDAO dao = new KhachHangDAO();
         try {
             if (dao.Delete(maKH)) {
                 response.sendRedirect("KhachHang");
-            } 
+            }
         } catch (Exception e) {
             e.printStackTrace();
-        }
         }
     }
 

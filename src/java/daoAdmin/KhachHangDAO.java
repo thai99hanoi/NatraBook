@@ -162,18 +162,20 @@ public class KhachHangDAO {
      
     public boolean Delete(int maKH) throws Exception {
 
-        String query = "DELETE From KHACHHANG where MaKhachHang=?\n";
+        String query = "DELETE From DONHANG where MaKhachHang=?\n"
+                +"DELETE From KHACHHANG where MaKhachHang=?\n";
         int check = 0;
         try (Connection conn = new DBContext().getConnection();
                 PreparedStatement ps = (conn != null) ? conn.prepareStatement(query) : null) {
             if (ps != null) {
                 ps.setInt(1, maKH);
+                ps.setInt(2, maKH);
                 check = ps.executeUpdate();
             }
         } catch (SQLException e) {
             e.printStackTrace(System.out);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(SachAdminDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KhachHangDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return check > 0;
     }

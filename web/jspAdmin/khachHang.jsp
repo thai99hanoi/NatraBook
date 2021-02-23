@@ -115,7 +115,7 @@
                             <a href="updateKhachHang?maKhachHang=${k.maKhachHang}">
                                 <input type="submit" value="Sửa" class="btn btn-info" />
                             </a> 
-                            <a href="DeleteKhachHang?maKhachHang=${t.maKhachHang}">
+                            <a href="deleteKH?maKhachHang=${k.maKhachHang}">
                                 <input type="submit" value="Xóa" class="btn btn-danger" />
                             </a>
                         </td>
