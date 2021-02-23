@@ -162,13 +162,12 @@ public class KhachHangDAO {
      
     public boolean Delete(int maKH) throws Exception {
 
-        String query = "DELETE From DONHANG where MaKhachHang=?\n";
+        String query = "DELETE From KHACHHANg where MaKhachHang=?";
         int check = 0;
         try (Connection conn = new DBContext().getConnection();
                 PreparedStatement ps = (conn != null) ? conn.prepareStatement(query) : null) {
             if (ps != null) {
                 ps.setInt(1, maKH);
-                ps.setInt(2, maKH);
                 check = ps.executeUpdate();
             }
         } catch (SQLException e) {
