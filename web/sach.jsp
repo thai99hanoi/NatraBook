@@ -26,54 +26,9 @@
 
     <body>
 
+        <jsp:include page="navbar.jsp"/>
+        <!--        <div class="container-fluid fixed-top" style="padding: 0% 10%; background-color: white">-->
 
-<!--        <div class="container-fluid fixed-top" style="padding: 0% 10%; background-color: white">-->
-            <nav class="navbar navbar-expand-sm navbar-light fixed-top container-fluid" style="padding-right: 16%;padding-left: 16%">
-                <a class="navbar-brand" href="./">
-                    <img src="Img/logo_last.png" width="100" height="60" alt="Natra" class="d-inline-block align-top"/>
-                    <h6 style="padding-bottom: 0px">
-                        NatraQuiCe Book
-                    </h6>
-                </a>
-
-
-                <!-- Right -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Navbar links -->
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="Sach">Trang Chủ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#Contact">Liên hệ</a>
-                        </li>
-                        <c:if test="${not empty sessionScope.login}">
-                            <li class="nav-item">
-                                <a class="nav-link" href="infor?user=${sessionScope.login.username}">Chào <strong>${sessionScope.login.displayName}</strong> </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="logout">Đăng Xuất</a>
-                            </li>
-
-                        </c:if>
-                        <li class="nav-item">
-                            <c:if test="${empty sessionScope.login}">
-                                <a class="nav-link" href="login">Đăng Nhập</a>
-                            </c:if>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <form class="mr-auto form-inline" action="Sach">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Tìm Kiếm"  name="search" value="${param.search}" >
-                            <button class="btn blue-gradient btn-rounded" type="submit" value="search" name="submit">Tìm</button>
-                        </form>
-                    </ul>
-                </div>
-            </nav>
 
         <div class="container-fluid" style="padding: 10% 10%">
             <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
@@ -103,133 +58,13 @@
             </div>
         </div>
 
-        <!--        <div class="container-fluid" style="padding: 0% 10%" >
-                    <h1>
-                        Mới Nhất
-                        <hr>
-                    </h1>
-                    <div class="row">
-        
-        
-                        <div class="col-lg-3 p-5">
-                            <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <img style="width: 50%;height: 400px;border: 1px solid black" class="d-block w-100" src="Img/BonMuoiGuongThanhCong.jpg" data-src="holder.js/900x400?theme=social" alt="First slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img style="width: 100%;height: 400px;border: 1px solid black" class="d-block w-100" src="Img/BanCoNamChoNgoi.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselFadeExampleIndicators" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselFadeExampleIndicators" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-3 p-5">
-                            <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <img style="width: 200px;height: 400px;border: 1px solid black" class="d-block w-100" src="Img/CaoGiaGaiGiaVaTieuThuyetDiemTinh.jpg" data-src="holder.js/900x400?theme=social" alt="First slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img style="width: 200px;height: 400px;border: 1px solid black" class="d-block w-100" src="Img/BanhTuyetNgonKhongCanLoNuong.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselFadeExampleIndicators" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselFadeExampleIndicators" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-3 p-5">
-                            <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <img style="width: 200px;height: 400px;border: 1px solid black" class="d-block w-100" src="Img/CaPheCungTony.jpg" data-src="holder.js/900x400?theme=social" alt="First slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img style="width: 200px;height: 400px;border: 1px solid black" class="d-block w-100" src="Img/Conan.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselFadeExampleIndicators" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselFadeExampleIndicators" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 p-5">
-                            <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <img style="width: 200px;height: 400px;border: 1px solid black" class="d-block w-100" src="Img/DigitalGold.jpg" data-src="holder.js/900x400?theme=social" alt="First slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img style="width: 200px;height: 400px;border: 1px solid black" class="d-block w-100" src="Img/DaleCarnegie.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselFadeExampleIndicators" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselFadeExampleIndicators" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
+
         <hr>
 
         <div class="container-fluid" style="padding: 3% 10%">
             <div class="row">
 
-                <div class="col-lg-2" style="background-color: white">
-                    <h1>
-                        Danh Sách Sản Phẩm
-                    </h1>
-                    <hr>
-                    <button type="button" class="btn btn-primary btn-sm w-100 bg-light border-0 text-dark p-1">
-                        Tất Cả
-                    </button>
-                    <div class="dropdown w-100 bg-light" >
-                        <button class="btn dropdown-toggle btn-sm w-100 bg-light" style="border-color: white; color: black"
-                                type="button" id="dropdownMenu1" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                            Thể Loại
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <c:forEach var="tl" items="${TheLoai}">
-                                <a class="dropdown-item" href="sotl?tenLoaiSach=${tl.tenLoaiSach}">
-                                    ${tl.tenLoaiSach}
-                                </a>
-                            </c:forEach>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-primary btn-sm w-100 bg-light" style="border-color: white">
-                        <a href="allAuth" style="color: black">
-                            Tác Giả
-                        </a>
-
-                    </button>
-
-                </div>
+                 <jsp:include page="sidebar.jsp"/>
                 <div class="col-lg-10 pl-5" >
                     <div class="row">
 
@@ -261,12 +96,12 @@
                                         </p>
 
                                         <div class="align-bot">
-                                            
-                                        
-                                        <p style="text-align: center;vertical-align: bottom">
 
-                                            <a  href="muasach?tenSach=${t.tenSach}"><input class="btn btn-info btn-lg" type="submit" value="Mua ngay"  name="buy"></a>
-                                        </p>
+
+                                            <p style="text-align: center;vertical-align: bottom">
+
+                                                <a  href="muasach?tenSach=${t.tenSach}"><input class="btn btn-info btn-lg" type="submit" value="Mua ngay"  name="buy"></a>
+                                            </p>
                                         </div>
                                     </span>
 
@@ -287,87 +122,7 @@
                 </ul>
             </nav>
         </div>
-
-
-        <div id="Contact" class="container-fluid" style="padding: 6% 10%;padding-bottom: 0px">
-
-
-            <footer class="page-footer font-small blue pt-4">
-                <div class="container-fluid text-center text-md-left">
-                    <div class="row">
-                        <div class="col-md-6 mt-md-0 mt-3">
-                            <h5 class="text-uppercase">NaTraQuiCe BookStore</h5>
-                            <p> DID YOU KNOW:</P>
-                            <P>
-                                NaTraQuiCe stand for Navi- Astralis- Liquid- ENCE
-                            </p>
-                        </div>
-                        <hr class="clearfix w-100 d-md-none pb-3">
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 mb-md-0 mb-3">
-
-                            <!-- Links -->
-                            <h5 class="text-uppercase">Special Thank To</h5>
-
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="https://www.facebook.com/Tildnight415"> Đạt Phùng</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/nguyenduong.phong.92">Phong Nguyễn</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/tairua.69">Tài Nguyễn</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/duong.nguyenthai.35728">Dương Nguyễn</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/thai.trinhnam">Thái Trịnh</a>
-                                </li>
-
-                            </ul>
-
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 mb-md-0 mb-3">
-
-                            <!-- Links -->
-                            <h5 class="text-uppercase">NaTraQuiCe Team</h5>
-
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="#!">Til_Dn1ght</a>
-                                </li>
-                                <li>
-                                    <a href="#!">Pyzz1sk_Boy</a>
-                                </li>
-                                <li>
-                                    <a href="#!">Auriatzz</a>
-                                </li>
-                                <li>
-                                    <a href="#!">lagger_CongtuVanDon_9xCute</a>
-                                </li>
-                                <li>
-                                    <a href="#!">Thasi_MVP</a>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-                <div class="footer-copyright text-center py-3">© 2019 Copyright:
-                    <a href="https://www.facebook.com/thai.trinhnam"> NaTraQuiCe Book Store</a>
-                </div>
-            </footer>
-        </div>
-
+        <jsp:include page="footer.jsp"/>
     </body>
 
 
